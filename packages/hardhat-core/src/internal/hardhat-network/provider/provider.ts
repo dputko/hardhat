@@ -352,7 +352,7 @@ export class EdrProviderWrapper
     const responseObject: Response = await this._provider.handleRequest(
       stringifiedArgs
     );
-    const response = JSON.parse(responseObject.json);
+    const response = responseObject.data;
 
     const needsTraces =
       this._node._vm.evm.events.eventNames().length > 0 ||
